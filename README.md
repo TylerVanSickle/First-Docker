@@ -13,9 +13,8 @@ This will create a Docker image tagged as myapp:latest.
 Run the Docker container
 After building the image, run the following command to start the container:
 
-bash
-Copy
 docker run -d --rm --name bubbles -p 8080:8080 myapp:latest
+
 -d runs the container in detached mode.
 --rm removes the container once it's stopped.
 --name bubbles assigns the name bubbles to the running container.
