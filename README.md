@@ -76,7 +76,7 @@ To build and deploy the application using Docker, follow these steps:
 1. Open a terminal or command prompt.
 
 
-2. Navigate to the directory where the `Dockerfile` is located. In this case, it is `/Users/tylervansickle/Desktop/mtech-webdev/Docker/First-Docker/`.
+2. Navigate to the directory where the `Dockerfile` is located. In this case, it is `Docker/First-Docker/`.
 
 
 3. Build the Docker image by running the following command:
