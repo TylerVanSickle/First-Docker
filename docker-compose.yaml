@@ -1,0 +1,7 @@
+---
+services:
+  mywebsite:
+    image: myapp:latest
+    ports:
+      - "3000:8080"
+...
