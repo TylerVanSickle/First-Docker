@@ -1,4 +1,4 @@
-# MyApp Docker Setup Day 1 & 2, Scroll for Day 3
+# MyApp Docker Setup
 
 This project uses Docker to build and run the application. Follow the instructions below to get started.
 
@@ -64,71 +64,91 @@ Additional Information:
 - To remove the stack, run `docker stack rm myapp-stack`.
 - If you make changes to your application, you can redeploy the stack by running `docker stack deploy -c docker-compose.yml myapp-stack` again.
 
-Enjoy using your app with Docker Stack!
-
-
 # Day 3
+
 
 ## Build and Deploy the Application
 
+
 To build and deploy the application using Docker, follow these steps:
+
 
 1. Open a terminal or command prompt.
 
+
 2. Navigate to the directory where the `Dockerfile` is located. In this case, it is `/Users/tylervansickle/Desktop/mtech-webdev/Docker/First-Docker/`.
 
+
 3. Build the Docker image by running the following command:
+
 
 ```bash
 docker build -t myapp:latest .
 ```
 
+
 This command will build the Docker image and tag it as `myapp:latest`.
 
+
 4. Once the image is built, you can deploy the application using Docker Stack. Create a Docker Compose file named `docker-compose.yaml` with the following content:
+
 
 ```yaml
 ---
 version: "3.8"
 services:
-  mywebsite:
-    image: myapp:latest
-    ports:
-      - "3000:8080"
-    deploy:
-      replicas: 3
-  mysecondsite:
-    image: myapp:latest
-    ports: 
-      - "3001:8080"
-    deploy:
-      replicas: 2
+ mywebsite:
+   image: myapp:latest
+   ports:
+     - "3000:8080"
+   deploy:
+     replicas: 3
+ mysecondsite:
+   image: myapp:latest
+   ports:
+     - "3001:8080"
+   deploy:
+     replicas: 2
 ...
 ```
 
+
 5. Save the `docker-compose.yaml` file in the same directory as the `Dockerfile`.
 
+
 6. Deploy the stack by running the following command:
+
 
 ```bash
 docker stack deploy -c docker-compose.yaml myapp-stack
 ```
 
+
 This command will create a stack named `myapp-stack` and deploy your application as a service.
 
+
 7. To check the status of the stack and your application's service, run:
+
 
 ```bash
 docker stack ps myapp-stack
 ```
 
+
 You should see the status of your application's service.
+
 
 8. The application should now be running and accessible at http://localhost:3000 AND http://localhost:3001.
 
+
 Additional Information:
 - To remove the stack, run `docker stack rm myapp-stack`.
-    If you only stop one of the containers, it will automatically re-deploy so you must remove the stack completely.
+   If you only stop one of the containers, it will automatically re-deploy so you must remove the stack completely.
 - If you make changes to your application, you can redeploy the stack by running `docker stack deploy -c docker-compose.yaml myapp-stack` again.
 
+
 Enjoy using your app with Docker Stack!
+
+
+
+
