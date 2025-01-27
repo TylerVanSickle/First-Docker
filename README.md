@@ -45,7 +45,7 @@ services:
 3. Run the following command to deploy the stack:
 
 ```bash
-docker stack deploy -c docker-compose.yml myapp
+docker stack deploy -c docker-compose.yml myapp-stack
 ```
 
 This will create a stack named `myapp` and deploy your application as a service.
@@ -53,7 +53,7 @@ This will create a stack named `myapp` and deploy your application as a service.
 4. To check the status of the stack, run:
 
 ```bash
-docker stack ps myapp
+docker stack ps myapp-stack
 ```
 
 You should see the status of your application's service.
@@ -62,6 +62,6 @@ You should see the status of your application's service.
 
 Additional Information:
 - To remove the stack, run `docker stack rm myapp`.
-- If you make changes to your application, you can redeploy the stack by running `docker stack deploy -c docker-compose.yml myapp` again.
+- If you make changes to your application, you can redeploy the stack by running `docker stack deploy -c docker-compose.yml myapp-stack` again.
 
 Enjoy using your app with Docker Stack!
